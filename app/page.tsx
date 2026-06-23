@@ -13,6 +13,7 @@ export default function HomePage() {
     <>
       <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       <Script src="/js/main.js" strategy="afterInteractive" />
+      <Script src="/js/analytics.js" strategy="afterInteractive" />
     </>
   );
 }

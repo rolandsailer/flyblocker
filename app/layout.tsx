@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import './globals.css';
 
 const siteUrl = 'https://fliegenblocker.relag.ch';
@@ -42,7 +43,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de-CH">
-      <body>{children}</body>
+      <body>
+        <GoogleAnalytics />
+        {children}
+      </body>
     </html>
   );
 }
