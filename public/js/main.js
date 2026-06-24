@@ -1,9 +1,12 @@
 // ---------- Single-source images (assigned to carousel + tabs to avoid duplication) ----------
 const IMG = {
   entrance: '/images/entrance.jpg',
+  gastronomie: '/images/gastronomie.jpg',
   lodge: '/images/lodge.jpg',
   shop: '/images/shop.jpg',
+  baeckerei: '/images/baeckerei.jpg',
   unit: '/images/unit.jpg',
+  industrie: '/images/industrie.jpg',
 };
 document.querySelectorAll('.carousel-slide[data-src]').forEach(el => {
   el.style.backgroundImage = "url('" + IMG[el.dataset.src] + "')";
