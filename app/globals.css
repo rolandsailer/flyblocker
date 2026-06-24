@@ -431,3 +431,33 @@ body.overlay-open{overflow:hidden;}
 }
 .phone-overlay-number:hover{color:var(--red);}
 .phone-overlay-hint{margin:16px 0 0;font-size:14px;color:var(--grey-mid);}
+
+/* ---------- Weitere Referenzen logo strip ---------- */
+#weitere-referenzen{ padding:64px 0; }
+.ref-logos{
+  display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:center;
+  margin-top:32px;
+}
+.ref-logo-item{
+  display:flex;align-items:center;justify-content:center;
+  min-width:180px;height:80px;
+  border:1.5px solid var(--grey-line);background:var(--white);
+  padding:16px 24px;
+}
+.ref-logo-item img{ max-height:48px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.7;transition:opacity .3s,filter .3s; }
+.ref-logo-item:hover img{ filter:grayscale(0);opacity:1; }
+.ref-logo-placeholder{
+  font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--grey-mid);
+}
+
+/* ---------- PDF product sheet section ---------- */
+#produkteblatt{ padding:80px 0;background:var(--cream); }
+.pdf-preview{ margin-top:40px;display:flex;justify-content:center; }
+.pdf-preview-placeholder{
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+  border:2px dashed var(--grey-line);background:var(--white);
+  padding:48px 64px;max-width:480px;width:100%;text-align:center;
+}
+.pdf-placeholder-label{ font-weight:700;font-size:16px;margin:0;color:var(--black); }
+.pdf-placeholder-note{ font-size:14px;color:var(--grey-mid);margin:0; }
