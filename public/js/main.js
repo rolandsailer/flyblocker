@@ -31,11 +31,13 @@ updateHeader();
 // ---------- Hero carousel ----------
 const slides = Array.from(document.querySelectorAll('.carousel-slide'));
 const dotsWrap = document.getElementById('carouselDots');
+const heroSection = document.getElementById('hero');
+const dotLabel = heroSection?.dataset.carouselDotLabel || 'Bild';
 let current = 0, timer = null;
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 slides.forEach((_, i) => {
   const b = document.createElement('button');
-  b.setAttribute('aria-label', 'Bild ' + (i+1));
+  b.setAttribute('aria-label', dotLabel + ' ' + (i + 1));
   if (i === 0) b.classList.add('active');
   b.addEventListener('click', () => { goTo(i); restart(); });
   dotsWrap.appendChild(b);
@@ -56,19 +58,22 @@ restart();
 const tabs = Array.from(document.querySelectorAll('.tab'));
 const tabImgs = Array.from(document.querySelectorAll('.tab-img'));
 const tabCaption = document.getElementById('tabCaption');
-const captions = [
-  ['Hotellerie & Lodges','Lobbys, Bergrestaurants und Shop-Eingänge — Komfort für Gäste, ganzjährig und diskret in die Architektur integriert.'],
-  ['Gastronomie','Restaurants und Gasthäuser mit hochfrequentierten Eingängen — Gäste herein, Insekten draussen.'],
-  ['Bäckerei & Konditorei','Schutz für offene Auslagen und Frischeprodukte — entscheidend für die Lebensmittelhygiene.'],
-  ['Lebensmittelverarbeitende Industrie','Produktion, Verarbeitung und Lager — Hygiene und Klimatrennung an stark genutzten Zugängen.']
-];
+const einsatzSection = document.getElementById('einsatz');
+const captionsEl = document.getElementById('tab-captions-data');
+const captions = einsatzSection?.dataset.tabCaptions
+  ? JSON.parse(einsatzSection.dataset.tabCaptions)
+  : captionsEl
+    ? JSON.parse(captionsEl.textContent || '[]')
+    : [];
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     const idx = +tab.dataset.tab;
     tabs.forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     tabImgs.forEach(im => im.classList.toggle('active', +im.dataset.img === idx));
-    tabCaption.innerHTML = '<b>' + captions[idx][0] + '</b>' + captions[idx][1];
+    if (tabCaption && captions[idx]) {
+      tabCaption.innerHTML = '<b>' + captions[idx][0] + '</b>' + captions[idx][1];
+    }
   });
 });
 

@@ -1,19 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import Script from 'next/script';
+import SitePage from '@/components/SitePage';
+import { buildMetadata } from '@/lib/buildMetadata';
 
-function getBodyHtml(): string {
-  return fs.readFileSync(path.join(process.cwd(), 'components', 'body.html'), 'utf-8');
-}
+export const metadata = buildMetadata('de');
 
 export default function HomePage() {
-  const bodyHtml = getBodyHtml();
-
-  return (
-    <>
-      <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
-      <Script src="/js/main.js" strategy="afterInteractive" />
-      <Script src="/js/analytics.js" strategy="afterInteractive" />
-    </>
-  );
+  return <SitePage locale="de" />;
 }
