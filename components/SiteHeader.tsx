@@ -8,6 +8,8 @@ type SiteHeaderProps = {
 
 export default function SiteHeader({ locale }: SiteHeaderProps) {
   const { brand, nav } = getContent(locale);
+  const altLocale = locale === 'de' ? 'fr' : 'de';
+  const altLabel = altLocale.toUpperCase();
 
   return (
     <header id="site-header" className="on-dark">
@@ -17,24 +19,14 @@ export default function SiteHeader({ locale }: SiteHeaderProps) {
           <span className="logo-tag">{brand.logoTag}</span>
         </a>
         <nav className="header-nav" aria-label={nav.navAria}>
-          <div className="lang-switch" role="group" aria-label={nav.langAria}>
-            <Link
-              href={localeSiteUrl('de')}
-              className={`lang-switch-btn${locale === 'de' ? ' active' : ''}`}
-              aria-current={locale === 'de' ? 'page' : undefined}
-              hrefLang="de-CH"
-            >
-              DE
-            </Link>
-            <Link
-              href={localeSiteUrl('fr')}
-              className={`lang-switch-btn${locale === 'fr' ? ' active' : ''}`}
-              aria-current={locale === 'fr' ? 'page' : undefined}
-              hrefLang="fr-CH"
-            >
-              FR
-            </Link>
-          </div>
+          <Link
+            href={localeSiteUrl(altLocale)}
+            className="navlink"
+            hrefLang={altLocale === 'fr' ? 'fr-CH' : 'de-CH'}
+            aria-label={altLocale === 'fr' ? 'Français' : 'Deutsch'}
+          >
+            {altLabel}
+          </Link>
           <a className="navlink" href={nav.aboutHref} target="_blank" rel="noopener">
             {nav.aboutLabel}
           </a>

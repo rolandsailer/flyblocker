@@ -79,7 +79,7 @@ export type SiteContent = {
     tabs: Array<{
       label: string;
       subtitle: string;
-      imageSrc: 'lodge' | 'gastronomie' | 'baeckerei' | 'industrie';
+      imageSrc: 'gastronomie' | 'baeckerei' | 'industrie';
       imageAlt: string;
       captionTitle: string;
       caption: string;

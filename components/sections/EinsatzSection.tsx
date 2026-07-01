@@ -35,7 +35,12 @@ export default function EinsatzSection({ locale }: EinsatzSectionProps) {
                 data-tab={index}
                 type="button"
               >
-                {tab.label}
+                {tab.label.split('\n').map((line, lineIndex) => (
+                  <span key={lineIndex}>
+                    {lineIndex > 0 && <br />}
+                    {line}
+                  </span>
+                ))}
                 <small>{tab.subtitle}</small>
               </button>
             ))}

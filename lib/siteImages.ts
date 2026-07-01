@@ -10,7 +10,7 @@ export const SITE_IMAGES = {
 
 export const HERO_CAROUSEL_SLIDES = [
   SITE_IMAGES.entrance,
-  SITE_IMAGES.lodge,
+  SITE_IMAGES.gastronomie,
   SITE_IMAGES.shop,
   SITE_IMAGES.unit,
 ] as const;

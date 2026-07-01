@@ -76,29 +76,20 @@ const fr: SiteContent = {
     title: { before: 'Partout où', bold: 'les portes restent ouvertes' },
     tabs: [
       {
-        label: 'Hôtellerie & lodges',
-        subtitle: 'Lobbys, restaurants de montagne, entrées de magasins',
-        imageSrc: 'lodge',
-        imageAlt: 'Hôtellerie et lodges – entrée avec porte d’air intégrée',
-        captionTitle: 'Hôtellerie & lodges',
-        caption:
-          'Lobbys, restaurants de montagne et entrées de magasins — confort pour les clients, toute l’année et intégré discrètement à l’architecture.',
-      },
-      {
-        label: 'Gastronomie',
-        subtitle: 'Restaurants & auberges',
+        label: 'Hôtellerie/Gastronomie',
+        subtitle: 'Lobbys, restaurants, restaurants de montagne & auberges',
         imageSrc: 'gastronomie',
-        imageAlt: 'Gastronomie – restaurant avec cuisine raffinée',
-        captionTitle: 'Gastronomie',
+        imageAlt: 'Hôtellerie et gastronomie – restaurant avec cuisine raffinée',
+        captionTitle: 'Hôtellerie/Gastronomie',
         caption:
-          'Restaurants et auberges à entrées très fréquentées — clients à l’intérieur, insectes dehors.',
+          'Lobbys, restaurants de montagne, entrées de magasins, restaurants et auberges — confort pour les clients, toute l’année et intégré discrètement. Clients à l’intérieur, insectes dehors.',
       },
       {
-        label: 'Boulangerie & pâtisserie',
+        label: 'Boulangeries/Pâtisseries',
         subtitle: 'Vitrines ouvertes, produits frais',
         imageSrc: 'baeckerei',
-        imageAlt: 'Boulangerie et pâtisserie – produits frais et vitrine ouverte',
-        captionTitle: 'Boulangerie & pâtisserie',
+        imageAlt: 'Boulangeries et pâtisseries – produits frais et vitrine ouverte',
+        captionTitle: 'Boulangeries/Pâtisseries',
         caption: 'Protection des vitrines ouvertes et produits frais — essentiel pour l’hygiène alimentaire.',
       },
       {

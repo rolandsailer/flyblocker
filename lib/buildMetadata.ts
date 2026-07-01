@@ -17,13 +17,13 @@ export function buildMetadata(locale: Locale): Metadata {
       siteName: meta.siteName,
       title: meta.ogTitle,
       description: meta.ogDescription,
-      images: [{ url: '/images/lodge.jpg', width: 1920, height: 1080, alt: meta.ogImageAlt }],
+      images: [{ url: '/images/entrance.jpg', width: 1920, height: 1080, alt: meta.ogImageAlt }],
     },
     twitter: {
       card: 'summary_large_image',
       title: meta.ogTitle,
       description: meta.ogDescription,
-      images: ['/images/lodge.jpg'],
+      images: ['/images/entrance.jpg'],
     },
     robots: { index: true, follow: true },
     alternates: {
